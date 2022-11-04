@@ -39,7 +39,8 @@ def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
             with open(annotation_name, mode="a", encoding="UTF-16", newline='') as f:
                 writer = csv.writer(f, delimiter=';')
                 result_file = os.path.join("dataset", f"{number}.txt")
-                abspath_f = os.path.join(os.path.abspath(dir_name), result_file)
+                abspath_f = os.path.join(
+                    os.path.abspath(dir_name), result_file)
                 otnos = os.path.join(dir_name, result_file)
                 writer.writerow([abspath_f, otnos, file_dataset])
             pass
