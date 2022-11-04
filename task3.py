@@ -3,8 +3,6 @@ import os
 import shutil
 from random import randint
 
-# узнать по поводу аннотации для 2,3 и ... заднаий : нужно для каждого csv файла прописывать полный путь и тд?
-
 
 def dir_create(dir_name) -> None:
     name_dir_folder = os.path.join(dir_name, "dataset")
@@ -41,7 +39,9 @@ def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
             with open(annotation_name, mode="a", encoding="UTF-16", newline='') as f:
                 writer = csv.writer(f, delimiter=';')
                 result_file = os.path.join("dataset", f"{number}.txt")
-                writer.writerow([file_dataset, result_file])
+                abspath_f = os.path.join(os.path.abspath(dir_name), result_file)
+                otnos = os.path.join(dir_name, result_file)
+                writer.writerow([abspath_f, otnos, file_dataset])
             pass
     print("3 task completed")
 

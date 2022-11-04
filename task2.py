@@ -28,7 +28,9 @@ def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
             shutil.copy(old_file, new_file)
             with open(annotation_name, mode="a", encoding="UTF-16", newline='') as f:
                 writer = csv.writer(f, delimiter=';')
-                writer.writerow([file_dataset, f"{file_dataset}_{elem}"])
+                abspath_f = os.path.join(os.path.abspath(dir_name), f"{file_dataset}_{elem}")
+                otnos_path = os.path.join(dir_name, f"{file_dataset}_{elem}")
+                writer.writerow([abspath_f, otnos_path, file_dataset])
             pass
     print("2 task completed")
 
