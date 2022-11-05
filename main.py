@@ -13,4 +13,3 @@ if __name__ == '__main__':
         if i == None:
             break
     print("4 task completed")
-    # во всех файлах прописать docstring

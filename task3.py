@@ -5,6 +5,7 @@ from random import randint
 
 
 def dir_create(dir_name) -> None:
+    '''The function of creating a new directory with the specified name dir_name'''
     name_dir_folder = os.path.join(dir_name, "dataset")
     if not os.path.isdir(dir_name):
         os.mkdir(dir_name)
@@ -14,6 +15,13 @@ def dir_create(dir_name) -> None:
 
 
 def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
+    '''
+    the function copies the dataset to a 
+    new directory with a random file name by means of creating this directory 
+    using the dir_create function and writes the absolute path, 
+    relative path and class name to a new csv file to be able 
+    to define the instance class
+    '''
     dir_create(dir_name)
     good = os.path.join("dataset", good_name)
     bad = os.path.join("dataset", bad_name)
@@ -48,4 +56,5 @@ def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
 
 
 def run3(dir_name, good_name, bad_name, annotation_name) -> None:
+    '''The function of launching a function that copy the dataset to a new directory with a random file name'''
     copy_dir(dir_name, good_name, bad_name, annotation_name)
