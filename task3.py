@@ -4,7 +4,7 @@ import shutil
 from random import randint
 
 
-def dir_create(dir_name : str) -> None:
+def create_dir(dir_name : str) -> None:
     '''The function of creating a new directory with the specified name dir_name'''
     name_dir_folder = os.path.join(dir_name, "dataset")
     if not os.path.isdir(dir_name):
