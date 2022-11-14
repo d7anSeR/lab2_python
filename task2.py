@@ -3,7 +3,7 @@ import os
 import shutil
 
 
-def create_dir(dir_name : str) -> None:
+def create_dir(dir_name: str) -> None:
     '''The function of creating a new directory with the specified name dir_name'''
     name_dir_folder = os.path.join(dir_name, "dataset")
     if not os.path.isdir(dir_name):
@@ -13,7 +13,7 @@ def create_dir(dir_name : str) -> None:
         os.mkdir(name)
 
 
-def copy_dir(dir_name : str, good_name : str, bad_name : str, annotation_name : str) -> None:
+def copy_dir(dir_name: str, good_name: str, bad_name: str, annotation_name: str) -> None:
     '''
     the function copies the dataset to a 
     new directory with changes in the file name (number.txt->classname_number.txt) by means of creating 
@@ -21,7 +21,7 @@ def copy_dir(dir_name : str, good_name : str, bad_name : str, annotation_name : 
     relative path and class name to a new csv file to be able 
     to define the instance class
     '''
-    dir_create(dir_name)
+    create_dir(dir_name)
     good = os.path.join("dataset", good_name)
     bad = os.path.join("dataset", bad_name)
     list_good = os.listdir(good)
@@ -44,6 +44,6 @@ def copy_dir(dir_name : str, good_name : str, bad_name : str, annotation_name : 
     print("2 task completed")
 
 
-def run2(dir_name : str, good_name : str, bad_name :str, annotation_name : str) -> None:
+def run2(dir_name: str, good_name: str, bad_name: str, annotation_name: str) -> None:
     '''The function of launching a function that copy the dataset to a new directory with changes in the file name'''
     copy_dir(dir_name, good_name, bad_name, annotation_name)
