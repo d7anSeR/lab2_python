@@ -3,7 +3,7 @@ import os
 import shutil
 
 
-def dir_create(dir_name) -> None:
+def dir_create(dir_name : str) -> None:
     '''The function of creating a new directory with the specified name dir_name'''
     name_dir_folder = os.path.join(dir_name, "dataset")
     if not os.path.isdir(dir_name):
@@ -13,7 +13,7 @@ def dir_create(dir_name) -> None:
         os.mkdir(name)
 
 
-def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
+def copy_dir(dir_name : str, good_name : str, bad_name : str, annotation_name : str) -> None:
     '''
     the function copies the dataset to a 
     new directory with changes in the file name (number.txt->classname_number.txt) by means of creating 
@@ -44,6 +44,6 @@ def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
     print("2 task completed")
 
 
-def run2(dir_name, good_name, bad_name, annotation_name) -> None:
+def run2(dir_name : str, good_name : str, bad_name :str, annotation_name : str) -> None:
     '''The function of launching a function that copy the dataset to a new directory with changes in the file name'''
     copy_dir(dir_name, good_name, bad_name, annotation_name)

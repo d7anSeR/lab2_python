@@ -11,7 +11,7 @@ class Iterator1:
         __next__ : return object and the counter is incremented by one, that is, it moves to the next element
     '''
 
-    def __init__(self, path_file):
+    def __init__(self, path_file : str):
         self.count = 0
         self.files = os.listdir(os.path.join("dataset", path_file))
         self.limit = len(self.files)
@@ -39,7 +39,7 @@ class Iterator2:
         __next__ : return object and the counter is incremented by one, that is, it moves to the next element
     '''
 
-    def __init__(self, class_n,  path_file):
+    def __init__(self, class_n : str,  path_file : str):
         self.files = os.listdir(path_file)
         for elem in self.files:
             if not class_n in elem:
@@ -68,7 +68,7 @@ class IteratorTask3:
         __next__ : return object and the counter is incremented by one, that is, it moves to the next element
     '''
 
-    def __init__(self, class_name, path, annotation_n):
+    def __init__(self, class_name : str, path : str, annotation_n : str):
         self.files = []
         with open(os.path.join(path, annotation_n), encoding='UTF-16') as f:
             reader = csv.reader(f, delimiter=';')

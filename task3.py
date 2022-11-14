@@ -4,7 +4,7 @@ import shutil
 from random import randint
 
 
-def dir_create(dir_name) -> None:
+def dir_create(dir_name : str) -> None:
     '''The function of creating a new directory with the specified name dir_name'''
     name_dir_folder = os.path.join(dir_name, "dataset")
     if not os.path.isdir(dir_name):
@@ -14,7 +14,7 @@ def dir_create(dir_name) -> None:
         os.mkdir(name)
 
 
-def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
+def copy_dir(dir_name : str, good_name : str, bad_name : str, annotation_name : str) -> None:
     '''
     the function copies the dataset to a 
     new directory with a random file name by means of creating this directory 
@@ -55,6 +55,6 @@ def copy_dir(dir_name, good_name, bad_name, annotation_name) -> None:
     print("3 task completed")
 
 
-def run3(dir_name, good_name, bad_name, annotation_name) -> None:
+def run3(dir_name : str, good_name : str, bad_name : str, annotation_name : str) -> None:
     '''The function of launching a function that copy the dataset to a new directory with a random file name'''
     copy_dir(dir_name, good_name, bad_name, annotation_name)
